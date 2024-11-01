@@ -10,3 +10,5 @@ How will we preprocess our data:
 What we checked:
 * if there were any null values in the dataset, which was none. As a result, we do not have to remove any null values.
 * there were no outliers to be found from the describe function's min and max and also from the pairplot not showing any outliers
+
+Column Description:
