@@ -27,3 +27,12 @@ Columns:
 What we checked:
 * We checked if the categories for the activities needed to be encoded and they were already numerically encoded so no work needs to be done here
 * We checked if there were any null or invalid entries within our dataset. Ultimately, we did not find any and thus do not need to remove any values in the upcoming preprocessing milestone
+
+-- Milestone 3 --
+
+For preprocessing, we dropped the subject column and utilized label encoding.
+We used min max scaling to scale all the data besides the Activity.
+There was no need to encode our data since our data was already in floats and ints.
+We used feature expansion to create a magnitude of acceleration using all the acceleration values we had.
+
+We trained our first model using eugene.
