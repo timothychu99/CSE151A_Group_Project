@@ -35,4 +35,11 @@ We used min max scaling to scale all the data besides the Activity.
 There was no need to encode our data since our data was already in floats and ints.
 We used feature expansion to create a magnitude of acceleration using all the acceleration values we had.
 
-We trained our first model using eugene.
+We trained our first model using logistic regression.
+Blah blah blah accruacy stuff training vs testnig error...
+
+Our model fits in a fitting graph...
+The next model we are thinking of using is SVM. We are thinking of using SVM because we will compartimentalize the data to find the margin lines of the Activities. Being within the margins, we can predict which Activity it is based on coordinate feature data.
+
+Conclusion
+The conclusion of our 1st model is... To improve it we can...
