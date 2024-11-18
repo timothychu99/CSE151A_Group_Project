@@ -29,17 +29,27 @@ What we checked:
 * We checked if there were any null or invalid entries within our dataset. Ultimately, we did not find any and thus do not need to remove any values in the upcoming preprocessing milestone
 
 -- Milestone 3 --
+Preprocessing:
+* We dropped the subject column.
+* We used min-max scaling to scale all the data besides the Activity.
 
-For preprocessing, we dropped the subject column and utilized label encoding.
-We used min max scaling to scale all the data besides the Activity.
 There was no need to encode our data since our data was already in floats and ints.
-We used feature expansion to create a magnitude of acceleration using all the acceleration values we had.
+We used feature expansion to create a magnitude of acceleration using all the acceleration values we had to improve correlation of Activities to the rest of the data.
 
-We trained our first model using logistic regression.
-Blah blah blah accruacy stuff training vs testnig error...
+* We trained our first model using logistic regression to predict an Activity based on acceleration and coordinate data.
 
-Our model fits in a fitting graph...
-The next model we are thinking of using is SVM. We are thinking of using SVM because we will compartimentalize the data to find the margin lines of the Activities. Being within the margins, we can predict which Activity it is based on coordinate feature data.
+* We made a classification report to measure training vs testing error for each Activity's logistic regression prediction model
+
+Where does your model fit in the fitting graph?
+Our model fit early in the fitting graph because as we measured iteration count on the logisitic regrssion models, we see that both the training and testing errors doesn't improve much after around iteration 30-100 which is very early in a logistic regression model. This shows our data is low complexity.
+
+What are the next models you are thinking of and why?
+We are thinking of SVMs because we can categorically sort the Activities on a graph to show correlation between acceleration and coordinates to a certain Activity.
+
+Link to Jupyter Notebook Fitting Graph and Logistic Regression Models:
+[jupyter notebook link](https://github.com/timothychu99/CSE151A_Group_Project/blob/Milestone3/preprocessing.ipynb)
 
 Conclusion
-The conclusion of our 1st model is... To improve it we can...
+The conclusion of our 1st model is that it performs below our expectations in terms of predicting the correct Activity based on acceleration and coordinate sensory data. We can improve this model by labeling the data better by using a very good model called Support Vector Machine. Support Vector Machine will categorize our data better than using logistic regression because it could categorize multiple activities on a singular graph. This will help us compare Activities with more accuracy.
+
+
