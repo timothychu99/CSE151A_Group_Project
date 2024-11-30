@@ -87,10 +87,10 @@ The SVM model fits in the fitting graph in regards to the model complexity with 
 4: Update your README.md to include your new work and updates you have all added. Make sure to upload all code and notebooks. Provide links in your README.md
 DONE
 
-5. Conclusion section: What is the conclusion of your 2nd model? What can be done to possibly improve it? Note: The conclusion section should be it's own independent section. i.e. Methods: will have models 1 and 2 methods, Conclusion: will have models 1 and 2 results and discussion. 
+5: Conclusion section: What is the conclusion of your 2nd model? What can be done to possibly improve it? Note: The conclusion section should be it's own independent section. i.e. Methods: will have models 1 and 2 methods, Conclusion: will have models 1 and 2 results and discussion. 
 The conclusion for our SVM model (our 2nd model) is that it is pretty good. It predcted with a whooping 74% accuracy!!! We can't improve it that much. The error rate has plateaued out in terms of the SVM for all higher polynomial degrees at a lower accuracy. The only way we can improve the model is to find another model like K-means or RBF.
 
-6. Provide predictions of correct and FP and FN from your test dataset.
+6: Provide predictions of correct and FP and FN from your test dataset.
 In terms of FP and FN, we have multiple classes and our y_test data is in terms of which activity is predicted. As a result, we are unable to perform FP and FN. For the predictions of correct on our test dataset, we are able to do compute it.
 
 Correct = accuracy * length of test_dataset
