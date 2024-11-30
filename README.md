@@ -57,4 +57,5 @@ Link to Jupyter Notebook Fitting Graph and Logistic Regression Models:
 Conclusion  
 The conclusion of our 1st model is that it performs better than random and for some activities performs very well in terms of predicting the correct Activity based on acceleration and gyroscope sensory data. However, for Activity 0 it did not perform as well. For several of the activities the training accuracy is much higher than the test accuracy, which can be an indication of overfitting. We can improve this model by labeling the data better and using a very good model called Support Vector Machine. Support Vector Machine will categorize our data better than using logistic regression because it could categorize multiple activities on a singular graph. This will help us compare Activities with more accuracy.
 
+## Milestone 4
 
