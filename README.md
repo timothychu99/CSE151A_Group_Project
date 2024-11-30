@@ -52,10 +52,11 @@ What are the next models you are thinking of and why?
 We are thinking of SVMs because we can categorically sort the Activities on a graph to show correlation between acceleration and gyroscope data to a certain Activity. We can also use one model to classify all the activities, rather than a separate model for each activity.
 
 Link to Jupyter Notebook Fitting Graph and Logistic Regression Models:
-[jupyter notebook link](https://github.com/timothychu99/CSE151A_Group_Project/blob/Milestone3/preprocessing.ipynb)
+[jupyter notebook link](https://github.com/timothychu99/CSE151A_Group_Project/blob/Milestone3/Milestone3_Logistic_Regression.ipynb)
 
 Conclusion  
 The conclusion of our 1st model is that it performs better than random and for some activities performs very well in terms of predicting the correct Activity based on acceleration and gyroscope sensory data. However, for Activity 0 it did not perform as well. For several of the activities the training accuracy is much higher than the test accuracy, which can be an indication of overfitting. We can improve this model by labeling the data better and using a very good model called Support Vector Machine. Support Vector Machine will categorize our data better than using logistic regression because it could categorize multiple activities on a singular graph. This will help us compare Activities with more accuracy.
 
 ## Milestone 4
+
 
