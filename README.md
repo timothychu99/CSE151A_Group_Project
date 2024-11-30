@@ -70,6 +70,7 @@ Our second model is SVM, we redone our previous model to be KNN instead of the L
 2: Evaluate your model and compare training vs. test error
 
 We have done this for both SVM and KNN test and train accuracies.
+
 In order to convert this to training and test error, we will compute the following equations:
 * testing error = 1 - testing accuracy
 * training error = 1 - training accuracy
@@ -78,6 +79,7 @@ for the best (Linear) SVM model measured in terms of lowest testing error:
 * testing accuracy = 0.7476923076923077
 * training error = 0.2685
 * testing error = 0.2523
+
 for the best (k = 19) KNN model measured in terms of lowest testing error:
 * training accuracy = 0.9257606837606838
 * testing accuracy = 0.6079230769230769
@@ -106,11 +108,16 @@ In terms of FP and FN, we have multiple classes and our y_test data is in terms 
 Correct = accuracy * length of test_dataset
 
 Predictions of correct for Linear SVM model:
-SVM test set size = 0.1 * 13000 = 1300
-Correct = 0.7476923076923077 * 1300 = 972
+
+`SVM test set size = 0.1 * 13000 = 1300`
+
+`Correct = 0.7476923076923077 * 1300 = 972`
+
 
 Predictions of correct for (k=19) KNN model:
-KNN test set size = 0.1 * 130000 = 13000
-Correct = 0.6079230769230769 * 13000 = 7903
+
+`KNN test set size = 0.1 * 130000 = 13000`
+
+`Correct = 0.6079230769230769 * 13000 = 7903`
 
 
