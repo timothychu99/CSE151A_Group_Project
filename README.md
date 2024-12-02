@@ -60,12 +60,14 @@ The conclusion of our 1st model is that it performs better than random and for s
 ## Milestone 4
 Based on feedback from Milestone 3, we changed our first model from Logistic Regression, where we made individual classifiers, to K-Nearest Neighbors to make it easier to find an overall accuracy and allow us to compare the results to our second model, SVM. The KNN model had an overall train accuracy of 0.93 and test accuracy of 0.61 after fine-tuning k to 19. Given the large difference in accuracies, this could indicate overfitting in our model. We then moved on to the second model, SVM.
 
+The KNN model fits in the fitting graph in regards to k correlating to the model complexity, with higher k values being higher model complexity. This is because when testing with increasing k values, we saw that it plateaus at a testing error of around 0.39. For proof, please check the [KNN_accuracy_results.txt](./KNN_accuracy_results.txt)
+
 Link to Jupyter Notebook SVM and KNN Models:
 [jupyter notebook link](https://github.com/timothychu99/CSE151A_Group_Project/blob/Milestone4/Milestone4_KNN_%26_SVM_models.ipynb)
 
 1: Train your second model. Make sure you use a different model than in MS3, and you must fine-tune your model to get an accurate comparison.
 
-Our second model is SVM, we redone our previous model to be KNN instead of the Logistic Regression.
+Our second model is SVM, we redone our previous model to be KNN instead of the Logistic Regression to get a better comparison.
 
 2: Evaluate your model and compare training vs. test error
 
@@ -88,9 +90,9 @@ for the best (k = 19) KNN model measured in terms of lowest testing error:
 
 3: Answer the questions: Where does your model fit in the fitting graph? and What are the next models you are thinking of and why?
 
-The KNN model fits in the fitting graph in regards to k being the model complexity with higher k values being higher model complexity to be close to the ideal range. This is because when testing with increasing k values, we saw that it plateaus at a testing error of around 0.39. For proof, please check the [KNN_accuracy_results.txt](./KNN_accuracy_results.txt)
+The SVM model overall has a higher model complexity than KNN, so it would be further to the right in the fitting graph. In regards to the model complexity, a higher polynomial SVM would also indicate a higher model complexity. From the classification reports, with increasing polynomials, it fully plateaued at testing accuracy of 0.72 for all polynomials greater or equal to 2. This is equal to a testing error of 0.28. For the Linear SVM model, the testing accuracy was a 0.74 which is equivalent to a testing error of 0.26, which is the lowest error we see from testing the SVM models. For proof, please check [SVM_accuracy_results.txt](./SVM_accuracy_results.txt)
 
-The SVM model fits in the fitting graph in regards to the model complexity with a higher polynomial SVM being higher model complexity to be at the ideal range. From the classification reports, with increasing polynomials, it fully plateaued at testing accuracy of 0.72 for all polynomials greater or equal to 2. This is equal to a testing error of 0.28. For the Linear SVM model, the testing accuracy was a 0.74 which is equivalent to a testing error of 0.26, which is the lowest error we see from testing the SVM models. For proof, please check [SVM_accuracy_results.txt](./SVM_accuracy_results.txt)
+Next, we are thinking that we could perform PCA on our dataset. Since a lot of the features are related to each other, both in terms of type of movement (acceleration and gyroscope) and origin of data (left or right hand), they might be better explained by principal components rather than as separate features.
 
 4: Update your README.md to include your new work and updates you have all added. Make sure to upload all code and notebooks. Provide links in your README.md
 
@@ -99,11 +101,11 @@ DONE
 5: Conclusion section: What is the conclusion of your 2nd model? What can be done to possibly improve it? Note: The conclusion section should be it's own 
 independent section. i.e. Methods: will have models 1 and 2 methods, Conclusion: will have models 1 and 2 results and discussion. 
 
-The conclusion for our SVM model (our 2nd model) is that it is pretty good. It predcted with a whooping 74% accuracy!!! We can't improve it that much. The error rate has plateaued out in terms of the SVM for all higher polynomial degrees at a lower accuracy. The only way we can improve the model is to find another model like K-means or RBF.
+We conclude that our SVM model (our 2nd model) is an improvement over our KNN model. It predicted with 74% accuracy on the test data. Comparing each output Activity, there was improvement in f1 score for most activities, but Activity 10, 11, and 12 performed worse. The training data had a similar accuracy, indicating that the model is likely not overfitting the training data, which is good. We tried different types of SVM kernels but did not see much change to our results. Therefore, the only way we can likely improve the model is to change how the data is input to the model, as mentioned above. We had to sample our data so that it could perform SVM in a reasonable time, so we could try running it on the same dataset that we used for KNN. We could also try other models like K-means, Naive Bayes, or RBF.
 
 6: Provide predictions of correct and FP and FN from your test dataset.
 
-In terms of FP and FN, we have multiple classes and our y_test data is in terms of which activity is predicted. As a result, we are unable to perform FP and FN. For the predictions of correct on our test dataset, we are able to do compute it.
+In terms of FP and FN, we have multiple classes and our y_test data is in terms of which activity is predicted. As a result, FP and FN don't make sense for the overall model because it is not binary data. We can get an idea of these values by looking at the precision and recall output for each Activity (in the txt files linked above). For the predictions of correct on our test dataset, we are able to do compute it.
 
 Correct = accuracy * length of test_dataset
 
