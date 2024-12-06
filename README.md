@@ -122,4 +122,72 @@ Predictions of correct for (k=19) KNN model:
 
 `Correct = 0.6079230769230769 * 13000 = 7903`
 
+# Milestone 5
 
+## Introduction
+We chose to work with exercise data because exercise is important for human health. Many people who exercise utilize applications and trackers to track their movements and exercise progress. This helps them obtain metrics about the activities being performed. This is cool because using these trackers data, we can accurately reflect what movements the subject is performing. This allows people to compare their movement data with others, or help categorize their movements into different exercises. Having a good predictive model for this would allow more people to track the efficency of their movement and types of exercise performed. This allows them to accurately predict which movement they are performing and can possibly let them know if they are doing a movement incorrectly, which is important when learning how to do or practice different exercises.
+
+## Methods
+
+### Data Exploration
+First, we had to explore our data before we work with it. Our exercise data is comprised by the following columns:
+
+Columns:
+1. Subject - The identifier for the subject performing the action in the data
+2. alx - The acceleration in the X direction of the sensor while the subject is performing motions
+3. aly - The acceleration in the Y direction of the sensor while the subject is performing motions
+4. alz - The acceleration in the Z direction of the sensor while the subject is performing motions
+5. arx - The rate of change of the accelerations in the X direction while the subject is performing motions
+6. ary - The rate of change of the accelerations in the Y direction while the subject is performing motions 
+7. arz - The rate of change of the accelerations in the Z direction while the subject is performing motions 
+8. glx - The gyroscrope data of the X location while the subject is performing motions
+9. gly - The gyroscrope data of the Y location while the subject is performing motions
+10. glz - The gyroscrope data of the Z location while the subject is performing motions
+11. grx - The rate of change of the gyroscope data in the X direction while the subject is performing motions
+12. gry - The rate of change of the gyroscope data in the Y direction while the subject is performing motions
+13. grz - The rate of change of the gyroscope data in the Z direction while the subject is performing motions
+14. Activity - The class of what activity the subject is performing
+
+Subject column was a string, Activity was an int, and everything else was a float.
+There were no null or invalid entries present within our dataset.
+
+We determined that we should drop the subject column as it does not ccontain any useful information. Due to our data size of 1.2 million, we determined that we should do a random sample of our data in order to get 4,000 random entries. As around 800,000-900,000 entries were of people standing still, we determined that we should drop or sample an appropriate size of this to not bias our model. Through our data exploration, we also determined that we should normalize the data through min-max normalization.
+
+### Preprocessing
+
+In order to preprocess our data, we first dropped the subject column. We then took 10,000 random samples of each activity to ensure an equal number of observaions for each. We used min-max scaling to scale all the input data. As we planned to have logistic regression models, we encoded the output class `Activity` to be an int (ex. Subject1 --> 1). We used feature expansion to create a magnitude of acceleration for each hand (left and right) using the x, y, and z acceleration values, with the goal of improving correlation of Activities to the rest of the data. 
+
+### Model 1
+
+We trained our first model using logistic regression to predict an Activity based on acceleration and gyroscope data. For each activity model, we encoded the output as 1 for the activity and 0 for the other activities. We then made a classification report to measure training vs testing error for each Activity's logistic regression prediction model.
+
+The example ground truth is the Activity type of the observation. For each model i this is encoded as `not Activity i = 0` and `Activity i = 1`. We anti oputedr test accuracy to be lower than training accuracy, since the model is trained on the training data. 
+
+We were then given feedback and changed our first model from Logistic Regression, where we made individual classifiers, to K-Nearest Neighbors to make it easier to find an overall accuracy.
+
+
+
+### Model 2
+
+We then trained our second model using support vector machines. Due to how SVM works, we had to reduce our sampling from 10,000 samples per category to 1,000 samples per category. We tested this with various different kernels, specifically the linear, radial bias function, and polynomial kernels. 
+We also tested various degrees when using the polynomial kernel. 
+
+
+## Results
+
+
+### Model 1 Results
+Our model fit early in the fitting graph. As we measured iteration count on the logisitic regrssion models, we saw that both the training and testing errors didn't improve much after around iteration 30-100 which is very early in a logistic regression model. This shows our data is low complexity.logistic regression 
+
+
+After TA assistance, we changed it to a KNNN  model.feedback  The KNN model had an overall train accuracy of 0.93 and test accuracy of 0.61 after fine-tuning k to 19. Given the large difference in accuracies, this could indicate overfitting in our model.
+
+The KNN model fits in the fitting graph in regards to k correlating to the model complexity, with higher k values being higher model complexity. This is because when testing with increasing k values, we saw that it plateaus at a testing error of around 0.39 as shown in [KNN_accuracy_results.txt](./KNN_accuracy_results.txt)
+
+### Model 2 Results
+
+## Discussion
+
+## Conclusion
+
+## Statement of Collaboration
