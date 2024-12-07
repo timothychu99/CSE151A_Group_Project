@@ -155,6 +155,9 @@ There were no null or invalid entries present within our dataset.
 
 We determined that we should drop the subject column as it does not contain any useful information. Due to our data size of 1.2 million, we determined that we should do a random sample of our data in order to get 4,000 random entries. As around 800,000-900,000 entries were of people standing still, we determined that we should drop or sample an appropriate size of this to not bias our model. Through our data exploration, we also determined that we should normalize the data through min-max normalization.
 
+![Data exploration pairplot](./pairplot_random_sample4000.png)
+Pairplot of the features of the dataset. There are no obvious correlations in the data.
+
 Our data exploration notebook can be found [here](./data_exploration.ipynb)
 
 ### Preprocessing
@@ -186,31 +189,41 @@ Our final SVM model can be seen [here](./Milestone4_KNN_&_SVM_models.ipynb)
 ## Results
 
 ### Model 1 Results
-Our model fit early in the fitting graph. As we measured iteration count on the logisitic regrssion models, we saw that both the training and testing errors didn't improve much after around iteration 30-100 which is very early in a logistic regression model. This shows our data is low complexity. 
+Our Logistic Regression models performed better than random, and the accuracy varied for each Activity.
 
-Our Logistic Regression models performed better than random, and the accuracy varied for each 
+![Graph of LogReg Fitting](./logreg_fitting.png)
 
 After TA feedback, we changed it to a KNN model. The KNN model had an overall train accuracy of 0.93 and test accuracy of 0.61 after fine-tuning k to 19. Given the large difference in accuracies, this could indicate overfitting in our model.
-
-The KNN model fits in the fitting graph in regards to k correlating to the model complexity, with higher k values being higher model complexity. This is because when testing with increasing k values, we saw that it plateaus at a testing error of around 0.39 as shown in [KNN_accuracy_results.txt](./KNN_accuracy_results.txt)
 
 ### Model 2 Results
 Our SVM model's seemed to yield between 72% to 75% accuracy regardless of the kernel chosen for both the training and test sets.
 
 ## Discussion 
 
-For model 2, due to how SVM works, we had to reduce our sampling from 10,000 samples per category to 1,000 samples per category. We tested this with various different kernels, specifically the linear, radial bias function, and polynomial kernels. 
-We also tested various degrees when using the polynomial kernel.
+For model 2, due to how SVM works, we had to reduce our sampling from 10,000 samples per category of Activities to 1,000 samples per category of Activities. We tested this with various different kernels, specifically the linear, radial bias function, and polynomial kernels. We also tested various degrees when using the polynomial kernel. We found that the best kernel among our SVM models was the linear kernel which yieleded a 73% accuracy on the training data and the 75% accuracy on the test data.
+
+Our Fitting graph discussion:
+Our logistic regression model fits early in the fitting graph. As we measured iteration count on the logisitic regrssion models, we saw that both the training and testing errors didn't improve much after around iteration 30-100 which is very early in a logistic regression model. This shows our data is low complexity. 
+
+Overall, the KNN model would place relatively low on the fitting graph, but higher than logistic regression. The KNN model fits in the fitting graph in regards to k correlating to the model complexity, with higher k values being higher model complexity. This is because when testing with increasing k values, we saw that it plateaus at a testing error of around 0.39 as shown in [KNN_accuracy_results.txt](./KNN_accuracy_results.txt)
+
+For both logistic regression and KNN, we saw that our training accuracy was higher than our test accuracy, which could be an indication of overfitting.
+
+The SVM model overall has a higher model complexity than KNN, so it would be further to the right in the fitting graph. In regards to the model complexity, a higher polynomial SVM would also indicate a higher model complexity. From the classification reports, with increasing polynomials, it fully plateaued at testing accuracy of 0.72 for all polynomials greater or equal to 2. This is equal to a testing error of 0.28. For the Linear SVM model, the testing accuracy was a 0.74 which is equivalent to a testing error of 0.26, which is the lowest error we see from testing the SVM models. Our results for each one of the various kernels with the SVM model are detailed in the following file: [SVM_accuracy_results.txt](./SVM_accuracy_results.txt)
 
 ## Conclusion
 
+We conclude that our SVM model performed the best at predicting the exercise activity based on the acceleration and gyroscope data, with a training and testing accuracy around 74%. Furthermore, the difference between the train and test accuracy is low, indicating that the model is likely not overfitting the data. In future exporation of this data, we could try changing our data input to our model by calculating the feature expansions differently or using PCA, for example. We could also try different models like Naive Bayes, Decision trees, or a neural network.
+
 ## Statement of Collaboration
+
+We met as a group for each milestone and worked on completing it together. 
 
 | Name | Title | Contribution |
 | -----| ----- | ------------ |
-| Name | Title | Contribution |
-| Name | Title | Contribution |
-| Name | Title | Contribution |
-| Name | Title | Contribution |
-| Name | Title | Contribution |
-| Name | Title | Contribution |
+| Alex | Coder & Writer | Wrting, Coding, Collaborating |
+| Eugene | Coder & Writer | Wrting, Coding, Collaborating |
+| Bryton | Coder & Writer | Wrting, Coding, Collaborating |
+| Caylin | Coder & Writer | Wrting, Coding, Collaborating |
+| Tim | Coder & Writer | Wrting, Coding, Collaborating |
+| Joshua | Coder & Writer | Wrting, Coding, Collaborating |
