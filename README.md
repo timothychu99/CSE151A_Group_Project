@@ -198,6 +198,17 @@ After TA feedback, we changed it to a KNN model. The KNN model had an overall tr
 ### Model 2 Results
 Our SVM model's seemed to yield between 72% to 75% accuracy regardless of the kernel chosen for both the training and test sets.
 
+Below is the accuracy error rate for different `linear` and `rbf` kernels:
+![Graph of Linear SVM fitting](./svm_linear_error.png)
+![Graph of RBF SVM fitting](./svm_rbf_error.png)
+
+Below is the accuracy error rate using different degree (using kernel=`rbf`):
+![Graph of RBF Degree=3 SVM fitting](./svm_deg3_error.png)
+![Graph of RBF Degree=4 SVM fitting](./svm_deg4_error.png)
+![Graph of RBF Degree=5 SVM fitting](./svm_deg5_error.png)
+![Graph of RBF Degree=6 SVM fitting](./svm_deg6_error.png)
+
+
 ## Discussion 
 
 For model 2, due to how SVM works, we had to reduce our sampling from 10,000 samples per category of Activities to 1,000 samples per category of Activities. We tested this with various different kernels, specifically the linear, radial bias function, and polynomial kernels. We also tested various degrees when using the polynomial kernel. We found that the best kernel among our SVM models was the linear kernel which yieleded a 73% accuracy on the training data and the 75% accuracy on the test data.
