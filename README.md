@@ -232,9 +232,9 @@ We met as a group for each milestone and worked on completing it together.
 
 | Name | Title | Contribution |
 | -----| ----- | ------------ |
-| Alex | Coder & Writer | Wrting, Coding, Collaborating |
-| Eugene | Coder & Writer | Wrting, Coding, Collaborating |
-| Bryton | Coder & Writer | Wrting, Coding, Collaborating |
-| Caylin | Coder & Writer | Wrting, Coding, Collaborating |
-| Tim | Coder & Writer | Wrting, Coding, Collaborating |
-| Joshua | Coder & Writer | Wrting, Coding, Collaborating |
+| Alexander Tahan | Coder & Writer | Wrting, Coding, Collaborating |
+| Eugene Lee | Coder & Writer | Wrting, Coding, Collaborating |
+| Bryton Lee | Coder & Writer | Wrting, Coding, Collaborating |
+| Caylin Canoy| Coder & Writer | Wrting, Coding, Collaborating |
+| Timothy Chu | Coder & Writer | Wrting, Coding, Collaborating |
+| Joshua Tan| Coder & Writer | Wrting, Coding, Collaborating |
